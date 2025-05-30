@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodApp</string>
+
+    <!-- Auth -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="btn_sign_in">Se connecter</string>
+    <string name="tv_go_sign_up">Pas de compte ? Inscrivez-vous</string>
+    <string name="btn_sign_up">S’inscrire</string>
+    <string name="hint_name">Nom complet</string>
+    <string name="error_name_required">Le nom est requis</string>
+    <string name="error_email_already_registered">Cet email est déjà enregistré</string>
+    <string name="msg_registered">Inscription réussie !</string>
+
+    <!-- Messages d’erreur -->
+    <string name="error_email_required">L’email est requis</string>
+    <string name="error_password_required">Le mot de passe est requis</string>
+    <string name="error_incorrect_credentials">Identifiants incorrects</string>
+
+    <!-- BottomNav / MenuPrincipal -->
+    <string name="title_menu">Menu</string>
+    <string name="title_cart">Panier</string>
+    <string name="title_contact">Contact</string>
+    <string name="title_profile">Profil</string>
+
+    <!-- Description contentDescription pour ivDishImage -->
+    <string name="desc_dish_image">Image du plat</string>
+</resources>
