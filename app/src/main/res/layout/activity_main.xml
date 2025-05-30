@@ -3,23 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- TEXTE DE DEBUG: doit apparaître si activity_main est bien chargé -->
-    <TextView
-        android:id="@+id/tvDebugMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ACTIVITY_MAIN OK"
-        android:textSize="24sp"
-        android:textColor="#FF0000"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
-
-    <!-- NavHostFragment pour la navigation -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -27,9 +15,10 @@
         android:layout_height="0dp"
         app:navGraph="@navigation/nav_graph"
         app:defaultNavHost="true"
-        app:layout_constraintTop_toBottomOf="@id/tvDebugMain"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout="@layout/fragment_sign_in" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
