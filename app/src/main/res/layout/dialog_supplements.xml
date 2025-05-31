@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/tvSupplementsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/supplements_title"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Liste de CheckBox dynamiques dans un LinearLayout vertical -->
+    <ScrollView
+        android:id="@+id/scrollViewSupplements"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSupplementsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:id="@+id/containerSupplements"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+    <!-- Bouton “Ajouter” (confirmer sélection) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSupplementsConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add_to_cart"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewSupplements"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bouton “Annuler” (fermer le dialog sans rien faire) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSupplementsCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_cancel"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSupplementsConfirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

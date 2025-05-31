@@ -4,10 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
     app:startDestination="@id/signInFragment">
+
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.example.food.ui.auth.SignInFragment"
-        android:label="Se connecter">
+        android:label="Connexion">
         <action
             android:id="@+id/action_signIn_to_signUp"
             app:destination="@id/signUpFragment" />
@@ -18,11 +19,10 @@
             app:popUpToInclusive="true" />
     </fragment>
 
-    <!-- Écran d’inscription -->
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.food.ui.auth.SignUpFragment"
-        android:label="S’inscrire">
+        android:label="Inscription">
         <action
             android:id="@+id/action_signUp_to_home"
             app:destination="@id/homeFragment"
@@ -30,7 +30,6 @@
             app:popUpToInclusive="true" />
     </fragment>
 
-    <!-- Écran principal (Home) -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.food.ui.main.HomeFragment"

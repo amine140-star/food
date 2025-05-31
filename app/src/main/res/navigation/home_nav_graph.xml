@@ -8,20 +8,21 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.food.ui.main.MenuFragment"
-        android:label="Menu" />
+        android:label="@string/title_menu" />
 
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.food.ui.main.CartFragment"
-        android:label="Panier" />
+        android:label="@string/title_cart" />
 
     <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.food.ui.main.ContactFragment"
-        android:label="Contact" />
+        android:label="@string/title_contact" />
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.food.ui.main.ProfileFragment"
-        android:label="Profil" />
+        android:label="@string/title_profile" />
+
 </navigation>

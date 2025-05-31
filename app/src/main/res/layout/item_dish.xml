@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardElevation="4dp">
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <!-- Image du plat (tools:src pour l’aperçu en design seulement) -->
+        <!-- 1. Image du plat -->
         <ImageView
             android:id="@+id/ivDishImage"
             android:layout_width="100dp"
@@ -25,9 +24,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:src="@drawable/ic_launcher_foreground" />
+            tools:src="@drawable/ic_pizza" />
 
-        <!-- Nom du plat -->
+        <!-- 2. Nom du plat -->
         <TextView
             android:id="@+id/tvDishName"
             android:layout_width="0dp"
@@ -36,31 +35,44 @@
             android:textAppearance="?attr/textAppearanceTitleMedium"
             app:layout_constraintTop_toTopOf="@id/ivDishImage"
             app:layout_constraintStart_toEndOf="@id/ivDishImage"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnAddToCart"
             tools:text="Pizza Margherita" />
 
-        <!-- Description du plat -->
+        <!-- 3. Description du plat -->
         <TextView
             android:id="@+id/tvDishDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:layout_marginStart="8dp"
             app:layout_constraintTop_toBottomOf="@id/tvDishName"
             app:layout_constraintStart_toStartOf="@id/tvDishName"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Pâte croustillante, sauce tomate, mozzarella et basilic frais." />
+            app:layout_constraintEnd_toStartOf="@id/btnAddToCart"
+            tools:text="Pâte croustillante, coulis de tomate, mozzarella, basilic frais." />
 
-        <!-- Prix du plat -->
+        <!-- 4. Prix du plat -->
         <TextView
             android:id="@+id/tvDishPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:textAppearance="?attr/textAppearanceLabelMedium"
             app:layout_constraintBottom_toBottomOf="@id/ivDishImage"
             app:layout_constraintStart_toStartOf="@id/tvDishName"
-            tools:text="18.99 $" />
+            tools:text="9.99 $" />
+
+        <!-- 5. Bouton “Ajouter au panier” corrigé -->
+        <ImageButton
+            android:id="@+id/btnAddToCart"
+            android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/add_to_cart"
+        app:tint="?attr/colorPrimary"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_constraintTop_toTopOf="@id/ivDishImage"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

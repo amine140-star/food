@@ -26,4 +26,16 @@
 
     <!-- Description contentDescription pour ivDishImage -->
     <string name="desc_dish_image">Image du plat</string>
+    <!-- Ajout au panier -->
+    <string name="add_to_cart">Ajouter au panier</string>
+    <string name="supplements_title">Choisissez vos suppléments</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="btn_confirm_order">Valider la commande</string>
+    <string name="total_format">Total : %.2f $</string>
+    <string name="remove_item">Supprimer cet article</string>
+    <string name="decrease_qty">Diminuer la quantité</string>
+    <string name="increase_qty">Augmenter la quantité</string>
+    <string name="btn_add_to_cart">Ajouter au panier</string>
+
+
 </resources>

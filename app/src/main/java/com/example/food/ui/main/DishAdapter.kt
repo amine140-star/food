@@ -3,37 +3,37 @@ package com.example.food.ui.main
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.food.R
 import com.example.food.data.Dish
 
-/**
- * Adapter pour afficher une liste de [Dish] dans un RecyclerView.
- */
 class DishAdapter(
     private val dishes: List<Dish>,
-    private val onItemClick: ((Dish) -> Unit)? = null
+    private val onAddToCart: ((Dish) -> Unit)? = null
 ) : RecyclerView.Adapter<DishAdapter.DishViewHolder>() {
 
-    /** ViewHolder qui lie un [item_dish.xml] */
     inner class DishViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivDishImage: ImageView = itemView.findViewById(R.id.ivDishImage)
         private val tvDishName: TextView = itemView.findViewById(R.id.tvDishName)
         private val tvDishDescription: TextView = itemView.findViewById(R.id.tvDishDescription)
         private val tvDishPrice: TextView = itemView.findViewById(R.id.tvDishPrice)
+        private val btnAddToCart: ImageButton = itemView.findViewById(R.id.btnAddToCart)
 
         fun bind(dish: Dish) {
+            // 1. Afficher l’image
             ivDishImage.setImageResource(dish.imageRes)
+
+            // 2. Afficher le nom, la description et le prix
             tvDishName.text = dish.name
             tvDishDescription.text = dish.description
-            // Formatage du prix en 2 décimales + symbole “$”
             tvDishPrice.text = String.format("%.2f $", dish.price)
 
-            // Si on veut gérer un clic sur l’item
-            itemView.setOnClickListener {
-                onItemClick?.invoke(dish)
+            // 3. Gérer le clic sur “Ajouter au panier”
+            btnAddToCart.setOnClickListener {
+                onAddToCart?.invoke(dish)
             }
         }
     }
