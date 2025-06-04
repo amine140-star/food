@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sign_up_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".ui.auth.SignUpFragment"
-    tools:ignore="HardcodedText">
-
-    <!-- Champ Nom complet -->
+    android:background="#F5F5F5"
+    tools:context=".ui.auth.SignUpFragment">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilSignUpName"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -72,6 +69,114 @@
             android:minHeight="48dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:id="@+id/llPhoneContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tilSignUpPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Spinner pour sélectionner le code pays -->
+        <Spinner
+            android:id="@+id/spinnerCountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:entries="@array/country_codes"
+            android:spinnerMode="dropdown"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Champ numéro de téléphone -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhone"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:minHeight="48dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Champ Adresse -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAddress"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@id/llPhoneContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_address"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Label “Préférences alimentaires” -->
+    <TextView
+        android:id="@+id/tvPreferencesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_preferences"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tilAddress"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ChipGroup pour préférences alimentaires -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupPreferences"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:chipSpacing="8dp"
+        app:singleSelection="false"
+        app:layout_constraintTop_toBottomOf="@id/tvPreferencesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVegetarien"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_vegetarien"
+            android:checkable="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipVegan"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_vegan"
+            android:checkable="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSansGluten"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_sans_gluten"
+            android:checkable="true" />
+    </com.google.android.material.chip.ChipGroup>
+
     <!-- Bouton “S’inscrire” -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
@@ -80,7 +185,7 @@
         android:minHeight="48dp"
         android:text="@string/btn_sign_up"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/tilSignUpPassword"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupPreferences"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

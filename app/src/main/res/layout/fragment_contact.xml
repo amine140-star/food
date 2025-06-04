@@ -1,15 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewContact"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:padding="16dp">
 
-    <TextView
-        android:layout_gravity="center"
-        android:text="Écran Contact"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/container_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitleContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contactez-nous"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="24dp" />
+
+        <TextView
+            android:id="@+id/tvLabelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votre nom"
+            android:textSize="14sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex. Marie Dupont"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Champ Email -->
+        <TextView
+            android:id="@+id/tvLabelEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Votre e-mail"
+            android:textSize="14sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="exemple@domaine.com"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvLabelSubject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sujet"
+            android:textSize="14sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sujet de votre message"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvLabelMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:textSize="14sp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="Écrivez votre message ici..."
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Envoyer"
+            android:textAllCaps="false"
+            android:padding="12dp"
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

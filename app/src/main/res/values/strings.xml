@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FoodApp</string>
+    <string name="logo_description">Logo de l’application</string>
+    <string name="inscription_link"><![CDATA[<u>Pas encore de compte ? Inscrivez-vous</u>]]></string>
 
     <string name="hint_email">Email</string>
     <string name="hint_password">Mot de passe</string>
@@ -45,8 +47,18 @@
     <string name="hint_no_email">Aucun email disponible</string>
     <string name="hint_no_phone">Aucun téléphone disponible</string>
     <string name="hint_no_address">Aucune adresse disponible</string>
+    <string name="contact_title">Contactez-nous</string>
 
+    <!-- Labels / hints des champs -->
+    <string name="placeholder_name">Ex. Marie Dupont</string>
 
+    <string name="placeholder_email">aminesouid20@gmail.com</string>
+    <string name="button_send">Envoyer</string>
+    <string name="label_subject">Sujet</string>
+    <string name="placeholder_subject">Sujet de votre message</string>
+
+    <string name="label_message">Votre message</string>
+    <string name="placeholder_message">Écrivez votre message ici…</string>
     <!-- Carte “Préférences alimentaires” -->
     <string name="label_diet_preferences">Préférences alimentaires</string>
     <string name="chip_vegetarian">Végétarien</string>
@@ -54,5 +66,15 @@
     <string name="chip_gluten_free">Sans gluten</string>
     <string name="desc_avatar">Photo de profil</string>
 
+
+        <string name="hint_phone">Téléphone</string>
+        <string name="hint_address">Adresse</string>
+        <string name="label_preferences">Préférences alimentaires</string>
+        <string name="chip_vegetarien">Végétarien</string>
+        <string name="chip_sans_gluten">Sans gluten</string>
+
+
+        <string name="error_phone_required">Le numéro de téléphone est requis</string>
+        <string name="error_address_required">L’adresse est requise</string>
 
 </resources>

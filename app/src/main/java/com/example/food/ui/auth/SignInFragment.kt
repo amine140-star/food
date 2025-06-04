@@ -11,14 +11,11 @@ import com.example.food.data.UserPreferences
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-
+import com.google.android.material.textview.MaterialTextView
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
-
     private lateinit var userPrefs: UserPreferences
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         userPrefs = UserPreferences(requireContext())
 
         val tilEmail    = view.findViewById<TextInputLayout>(R.id.tilEmail)
@@ -26,9 +23,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         val etEmail     = view.findViewById<TextInputEditText>(R.id.etEmail)
         val etPassword  = view.findViewById<TextInputEditText>(R.id.etPassword)
         val btnSignIn   = view.findViewById<MaterialButton>(R.id.btnSignIn)
-        val tvGoSignUp  = view.findViewById<com.google.android.material.textview.MaterialTextView>(R.id.tvGoSignUp)
+        val tvGoSignUp  = view.findViewById<MaterialTextView>(R.id.tvGoSignUp)
 
-        // Réinitialise l’erreur quand l’utilisateur modifie les champs
         etEmail.doAfterTextChanged    { tilEmail.error = null }
         etPassword.doAfterTextChanged { tilPassword.error = null }
 
@@ -47,13 +43,15 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             }
             if (!isValid) return@setOnClickListener
 
-            // Authentifie l’utilisateur avec email + mot de passe
             val user = userPrefs.authenticate(emailText, passText)
             if (user != null) {
-                // OK → naviguer vers HomeFragment
                 findNavController().navigate(R.id.action_signIn_to_home)
             } else {
-                Toast.makeText(requireContext(), getString(R.string.error_incorrect_credentials), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.error_incorrect_credentials),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 

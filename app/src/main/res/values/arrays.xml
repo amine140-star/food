@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="country_codes">
+        <item>+33 – France</item>
+        <item>+1 – États-Unis</item>
+        <item>+44 – Royaume-Uni</item>
+        <item>+49 – Allemagne</item>
+        <item>+212 – Maroc</item>
+    </string-array>
+</resources>
