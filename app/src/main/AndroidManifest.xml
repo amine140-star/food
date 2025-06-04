@@ -13,7 +13,6 @@
         android:theme="@style/Theme.Food"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <!-- MainActivity est la seule Activity lancée au démarrage -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

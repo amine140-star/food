@@ -23,7 +23,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Menu des Plats" />
 
-    <!-- RecyclerView pour la liste des plats -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDishes"
         android:layout_width="0dp"
